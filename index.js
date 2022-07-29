@@ -46,10 +46,16 @@ function releaseMawbstersBalloons() {
 releaseMawbstersBalloons();
 setInterval(releaseMawbstersBalloons, 500);
 
+var isPlaying = false;
+var url = window.location + "music.mp3";
+console.log("URL: ", url);
+var audio = new Audio(url);
 function playmusic() {
-  var url = window.location + "music.mp3";
-  console.log("URL: ", url);
-  var audio = new Audio(url);
-  audio.play();
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  isPlaying = !isPlaying;
 }
-playmusic();
+window.addEventListener("click", playmusic);
