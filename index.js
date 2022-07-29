@@ -59,3 +59,4 @@ function playmusic() {
   isPlaying = !isPlaying;
 }
 window.addEventListener("click", playmusic);
+window.addEventListener("touchend", playmusic);
